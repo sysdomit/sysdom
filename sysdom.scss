@@ -1,0 +1,392 @@
+
+
+// Semantic color scheme
+$theme-colors: (
+  primary: #007bff,
+  secondary: #032e5c,
+  success: #28a745,
+  info: #00fbff,
+  warning: #ffc107,
+  danger: #dc3545,
+  light: #f8f9fa,
+  dark: #343a40
+);
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+ 
+$enable-rounded:            true !default;
+$enable-shadows:            false;
+$enable-gradients:          false;
+$enable-transitions:        true !default;
+$enable-hover-media-query:  false !default;
+$enable-grid-classes:       true !default;
+$enable-print-styles:       true !default;
+
+// Variables
+//
+// Theme settings.
+
+$body-bg: white;
+$body-color: #292b2c;
+$body-color-inverse: invert($body-color) !default;
+$link-color: #007bff;
+
+
+$font-family-base: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$headings-font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-size-h1: 2.5 * $font-size-base;
+$font-size-h2: 2 * $font-size-base;
+$font-size-h3: 1.75 * $font-size-base;
+$font-size-h4: 1.5 * $font-size-base;
+$font-size-h5: 1.25 * $font-size-base;
+$font-size-h6: $font-size-base;
+
+$display1-size: 6 * $font-size-base;
+$display2-size: 5.5 * $font-size-base;
+$display3-size: 4.5 * $font-size-base;
+$display4-size: 3.5 * $font-size-base;
+$display5-size: 2.5 * $font-size-base;
+$display6-size: 1.5 * $font-size-base;
+
+$border-radius: .25rem;
+
+
+@import 'bootstrap-4.0.0-beta.1';
+
+
+body > * {
+  background-size: cover;
+}
+
+.opaque-overlay {
+  overflow: hidden;
+  position: relative; 
+  > *:first-child:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px; 
+    pointer-events:none;
+    background: rgba(map-get($theme-colors, 'dark'), 0.25);
+  }
+}
+
+
+.gradient-overlay {
+  overflow: hidden;
+  position: relative; 
+  > *:first-child:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px; 
+    pointer-events:none;
+    background: linear-gradient(to top , map-get($theme-colors, 'dark') 0%, transparent 100%);
+
+  } 
+}
+
+.btn-wide{  
+   padding-bottom: 0.5em !important;
+   padding-top: 0.5rem !important;
+}
+
+.btn-action{
+   color: #fff;
+   text-align: center;
+	 background: #fa7e18;
+	 border-color: #fa7e18;
+   padding-bottom: 0.5em !important;
+   padding-top: 0.5rem !important;
+}
+.btn-action:hover {
+  color: #fff;
+  background-color: #e27012;
+  border-color: #c15700;
+}
+.btn-action:focus, .btn-action.focus {
+  box-shadow: 0 0 0 3px rgba(255, 118, 0, 0.5); }
+.btn-action.disabled, .btn-action:disabled {
+  background-color: #fa7e18;
+  border-color: #fa7e18; }
+.btn-action:active, .btn-action.active,
+.show > .btn-action.dropdown-toggle {
+  background-color: #e27012;
+  background-image: none;
+  border-color: #c15700; }
+
+.btn-greensys {
+  color: #fff;
+  background: #1e967d;
+	border-color: #1e967d;
+}
+.btn-greensys:hover {
+  color: #fff;
+  background-color: #008775;
+  border-color: #1e967d;
+  box-shadow: 0 0 0 3px rgba(0, 183, 149, 0.5);
+}
+.btn-greensys:focus {
+  box-shadow: 0 0 0 3px rgba(0, 183, 149, 0.5); }
+.btn-greensys.disabled, .btn-greensys:disabled {
+  background-color: #1e967d;
+  border-color: #1e967d; }
+.btn-greensys:active, .btn-greensys.active,
+.show > .btn-greensys.dropdown-toggle {
+  background-color: #008775;
+  background-image: none;
+  border-color: #1e967d; }
+
+.line{
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  margin-bottom: 1.5em;
+}
+
+.line-top {
+  border-top-width: 3px;
+  border-top-style: solid;
+}
+
+.line-blue{
+  border-bottom-color: #1b91cc;
+  border-top-color: #1b91cc;
+}
+
+.line-blue-gray-deep{
+  border-bottom-color: #2d7498;
+  border-top-color: #2d7498;
+}
+
+.line-green{
+  border-bottom-color: #048d7b;
+  border-top-color: #048d7b;
+}
+
+.line-purple{
+  border-bottom-color: #783699;
+  border-top-color: #783699;
+}
+
+.line-purple-deep{
+  border-bottom-color: #562b6b;
+  border-top-color: #562b6b;
+}
+
+.line-yellow{
+  border-bottom-color: #ffaa00;  
+  border-top-color: #ffaa00;
+}
+
+.iconsys {
+	font-size: 65px;
+}
+
+.iconsys-side {
+	font-size: 55px;
+}
+
+.iconsys-side-big {
+	font-size: 80px;
+}
+
+.blue{
+	color: #1b91cc;
+}
+
+.blue-deep {
+ color: #194179;
+}
+
+.blue-gray-deep {
+ color: #2d7498; 
+}
+
+.blue-gray{
+	color: #4e6e9a;
+}
+
+.blue-gray-pale{
+	color: #5e85b9;
+}
+
+.green{
+  color: #048d7b;
+}
+
+.green-deep {
+ color: #036540
+}
+
+.green-pale{
+  color: #3eada4;
+}
+
+.green-gray-pale{
+  color: #429892;
+}
+
+.purple{
+  color: #783699;
+}
+
+.purple-deep{
+  color: #562b6b;
+}
+
+.yellow-orange{
+  color: #dc800b;
+}
+
+.yellow-medium {
+	color: #ed9e00;
+}
+
+.yellow-light {
+	color: #ffaa00;
+}
+
+.gray {
+  color: #636363;
+}
+
+.gray-light {
+  color: #818182;
+}
+
+.gray-dark {
+  color: #343435;
+}
+
+.red {
+ color: #cc0b0b;
+}
+
+.gray-background {
+ background-color: #f5f5f5;
+}
+
+.ico-bullet{
+  margin-right: 25px;
+}
+
+.ico-side{
+  vertical-align: middle;
+}
+
+.my6 {
+ margin-top: 4rem ;
+ margin-bottom: 4rem ;
+}
+
+.my4 {
+ margin-top: 2rem ;
+ margin-bottom: 2rem ;
+}
+
+.my7-bottom {
+ margin-bottom: 5rem ;
+}
+
+.my6-bottom {
+ margin-bottom: 4rem ;
+}
+
+.my5-bottom {
+ margin-bottom: 3rem ;
+}
+
+.my4-bottom {
+ margin-bottom: 2rem ;
+}
+
+.my3-bottom{
+ margin-bottom: 1rem ;
+}
+
+.my3-top{
+ margin-top: 1rem ;
+}
+
+.my4-top{
+ margin-top: 2rem ;
+}
+
+.py8 {
+  padding-bottom: 6rem !important;
+  padding-top: 6rem !important;
+}
+
+.py5-top {
+  padding-top: 3rem !important;
+}
+
+.py3-bottom {
+  padding-bottom: 1rem !important;
+}
+
+.py4-bottom {
+  padding-bottom: 2rem !important;
+}
+
+.py7-bottom {
+  padding-bottom: 5rem !important;
+}
+
+.py8-bottom {
+  padding-bottom: 6rem !important;
+}
+
+.h-icon {
+ margin-top: -1rem;
+}
+
+.title-sol {
+ padding-right: 1rem;
+}
+
+.display-4 {
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.display-5 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.display-6 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}
+
+@media (min-width: 1200px) {
+    .container {
+      max-width: 1180px; } }
+
+@media (min-width: 1800px) {
+    .container {
+      max-width: 1700px; } }
+
+.navbar-container{
+  max-width: 95%;
+}
